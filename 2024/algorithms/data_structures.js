@@ -1,0 +1,34 @@
+﻿/**
+ * Data Structures & Algorithm Core Module (2024)
+ * Author: Early Pajo (@EARL146)
+ */
+class BinarySearchTree {
+    constructor() { this.root = null; }
+    insert(val) {
+        const node = { val, left: null, right: null };
+        if (!this.root) { this.root = node; return; }
+        let curr = this.root;
+        while (true) {
+            if (val < curr.val) {
+                if (!curr.left) { curr.left = node; break; }
+                curr = curr.left;
+            } else {
+                if (!curr.right) { curr.right = node; break; }
+                curr = curr.right;
+            }
+        }
+    }
+}
+
+function quickSort(arr) {
+    if (arr.length <= 1) return arr;
+    const pivot = arr[arr.length - 1];
+    const left = [], right = [];
+    for (let i = 0; i < arr.length - 1; i++) {
+        if (arr[i] < pivot) left.push(arr[i]);
+        else right.push(arr[i]);
+    }
+    return [...quickSort(left), pivot, ...quickSort(right)];
+}
+
+module.exports = { BinarySearchTree, quickSort };
