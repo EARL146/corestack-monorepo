@@ -1,13 +1,57 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Engineering System 2024 - Early Pajo</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Portal & Design System - 2024</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="components.css">
 </head>
 <body>
-  <header><h1>Developer System & Services - 2024</h1></header>
-  <main id="app"><div class="card"><h2>System Status: Active</h2></div></main>
-  <script src="app.js"></script>
+    <header class="navbar">
+        <div class="container nav-content">
+            <div class="logo">âš¡ CoreStack 2024</div>
+            <nav class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#services">Services</a>
+                <a href="dashboard.html">Admin Portal</a>
+                <button class="btn btn-primary" id="loginModalBtn">Sign In</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero-section">
+            <h1 class="hero-title">Scalable High-Throughput Software Architecture</h1>
+            <p class="hero-subtitle">Engineered from ground up in 2024 to support multi-tenant distributed operations.</p>
+            <div class="cta-group">
+                <a href="dashboard.html" class="btn btn-primary">Launch Dashboard</a>
+                <button class="btn btn-outline" id="themeToggle">Toggle Theme</button>
+            </div>
+        </section>
+
+        <section id="features" class="grid-cards">
+            <div class="card">
+                <h3>Modular Architecture</h3>
+                <p>Decoupled micro-frontends and robust data validation pipelines.</p>
+            </div>
+            <div class="card">
+                <h3>High Availability</h3>
+                <p>99.99% SLA targeting with client-side caching and state recovery.</p>
+            </div>
+            <div class="card">
+                <h3>Zero Latency UI</h3>
+                <p>Optimized DOM manipulation and asynchronous state dispatching.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Early Pajo (EARL146) Engineering Archives. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="storage_helper.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
