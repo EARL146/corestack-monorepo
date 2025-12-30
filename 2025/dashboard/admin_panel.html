@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enterprise Analytics Dashboard 2025</title>
+    <link rel="stylesheet" href="admin_style.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">ðŸ“Š DataCore 2025</div>
+            <nav class="sidebar-nav">
+                <a class="active" href="#">Overview</a>
+                <a href="#">Orders</a>
+                <a href="#">Inventory</a>
+                <a href="#">Security Audit</a>
+            </nav>
+        </aside>
+        <main class="main-view">
+            <header class="topbar">
+                <h3>Executive Summary</h3>
+                <div class="user-badge">EARL146 (Admin)</div>
+            </header>
+            <section class="kpi-grid">
+                <div class="kpi-card">
+                    <span class="label">Total Revenue YTD</span>
+                    <span class="value">$1,249,500</span>
+                </div>
+                <div class="kpi-card">
+                    <span class="label">API Requests Today</span>
+                    <span class="value">4,912,830</span>
+                </div>
+                <div class="kpi-card">
+                    <span class="label">Error Rate</span>
+                    <span class="value">0.0018%</span>
+                </div>
+            </section>
+            <section class="chart-box">
+                <canvas id="trafficCanvas" width="800" height="240"></canvas>
+            </section>
+        </main>
+    </div>
+    <script src="charts_analytics.js"></script>
+</body>
+</html>
