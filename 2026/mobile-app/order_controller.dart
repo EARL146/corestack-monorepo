@@ -1,11 +1,29 @@
-﻿// Flutter/Dart Mobile App Controller (2026)
-class OrderController {
-    final List<Map<String, dynamic>> _items = [];
-    List<Map<String, dynamic>> get items => List.unmodifiable(_items);
+﻿import 'package:flutter/foundation.dart';
+import 'cart_model.dart';
 
-    void addItem(String name, double price) {
-        _items.add({'name': name, 'price': price, 'date': DateTime.now().toIso8601String()});
-    }
+class OrderController extends ChangeNotifier {
+  final List<CartItem> _items = [];
 
-    double get total => _items.fold(0.0, (sum, item) => sum + (item['price'] as double));
+  List<CartItem> get items => List.unmodifiable(_items);
+
+  double get subtotal => _items.fold(0.0, (sum, item) => sum + (item.price * item.quantity));
+  double get tax => subtotal * 0.12;
+  double get grandTotal => subtotal + tax;
+
+  void addSampleItem() {
+    _items.add(
+      CartItem(
+        id: DateTime.now().millisecondsSinceEpoch.toString(),
+        name: 'Classic Double Cheeseburger',
+        price: 185.00,
+        quantity: 1,
+      ),
+    );
+    notifyListeners();
+  }
+
+  void clearCart() {
+    _items.clear();
+    notifyListeners();
+  }
 }
